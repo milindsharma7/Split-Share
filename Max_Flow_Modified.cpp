@@ -91,7 +91,7 @@ int main(){
         Cap[u][v] += c;
     } 
     vector <vector <long long int>> FinalGraph = graph,FinalCost = Cap;
-    auto simply = [&](){
+    auto simplify = [&](){
         for(long long int i=1;i<=nodes;i++){
             for(long long int j=i+1;j<=nodes;j++){
                 if(FinalCost[i][j] != 0 && FinalCost[j][i] != 0){
@@ -113,7 +113,7 @@ int main(){
             if(i == j){
                 continue;
             }
-            simply();
+            simplify();
             Dinic_Max_Flow_Modified MF(FinalGraph,FinalCost,nodes);
             pair <long long int,vector <vector <long long int>>> result = MF.maxFlow(i,j);
             if(result.first > 0){
@@ -124,7 +124,7 @@ int main(){
         }
     }
     cout << "Final Result\n";
-    simply();
+    simplify();
     for(long long int i=1;i<=nodes;i++){
         for(long long int j=1;j<=nodes;j++){
             if(FinalCost[i][j] > 0){
