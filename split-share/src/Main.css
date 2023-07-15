@@ -1,0 +1,21 @@
+#mainContent{
+    width: 80vw;
+    word-wrap: break-word;
+    margin: auto;
+    margin-top: 6vh;
+    font-size: 2.8vmin;
+}
+
+#headings{
+    background-color: rgba(99, 99, 99, 0.228);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#headings p{
+    padding: 5px;
+}
+
+#formArea{
+    margin: 10px;
+}
