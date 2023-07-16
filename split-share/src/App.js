@@ -2,7 +2,6 @@ import './styles/App.css';
 import { BrowserRouter, Route, Routes, } from 'react-router-dom'
 import Home from './pages/Home';
 import Main from './pages/Main';
-import Read from './pages/Read';
 import Working from './pages/Working';
 
 function App() {

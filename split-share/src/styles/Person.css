@@ -42,7 +42,6 @@
     width: 100%;
     font-weight: 600;
     color: rgb(79, 79, 79);
-    backdrop-filter: blur(3px);
 }
 
 #graphs{
