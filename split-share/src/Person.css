@@ -1,0 +1,33 @@
+#personAdd{
+    display: flex;
+}
+
+#personDelete{
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 5px;
+    cursor: pointer;
+    font-size: 2vmin;
+}
+
+#addPerson{
+    display: flex;
+}
+
+#computeButton{
+    border: none;
+    cursor: pointer;
+    min-width: 7vw;
+    height: 4vh;
+    background-color: rgba(0, 224, 0, 0.605);
+    color: white;
+}
+/* 
+#formArea{
+    margin: 30px;
+} */
+
+#buttonAndInputArea{
+    display: flex;
+}

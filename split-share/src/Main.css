@@ -7,15 +7,19 @@
 }
 
 #headings{
-    background-color: rgba(99, 99, 99, 0.228);
+    background-color: rgba(99, 99, 99, 0.146);
     padding: 20px;
     border-radius: 10px;
 }
 
 #headings p{
-    padding: 5px;
+    padding: 10px;
 }
 
 #formArea{
     margin: 10px;
+}
+
+h1{
+    color: rgba(71, 71, 71, 0.811)
 }

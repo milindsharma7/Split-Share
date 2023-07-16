@@ -6,12 +6,13 @@ import Particle from './Particle'
 function Home() {
   return (
     <div id='mainDiv'>
-        {/* <Particle/> */}
-        <nav id='navBar'>
+        <Particle/>
+        <nav id='navBar'> 
             <div>SPLIT SHARE - Exploring the Algorithm Behind Debt Sharing</div>
             <div id='navLink'>
-                <Link to='/' className='navButton'>Home</Link>
-                <Link to='/about' className='navButton'>Read</Link>
+                <Link to='/home' className='navButton'>Home</Link>
+                <Link to='/working' className='navButton'>Working</Link>
+                <Link to='/read' className='navButton'>Read</Link>
             </div>
         </nav>
         <Outlet/>

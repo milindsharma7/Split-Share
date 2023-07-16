@@ -369,7 +369,7 @@ const Particle = () => {
                     },
                     value: {
                       min: 1,
-                      max: 2
+                      max: 3
                     },
                     animation: {
                       count: 0,
