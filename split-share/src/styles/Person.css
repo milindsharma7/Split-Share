@@ -1,5 +1,7 @@
 #personAdd{
     display: flex;
+    justify-content:space-between;
+    width: 60%;
 }
 
 #personDelete{
@@ -13,6 +15,9 @@
 
 #addPerson{
     display: flex;
+    width: 40vw;
+    justify-content:space-between;
+    background-color: rgba(99, 99, 99, 0.146);
 }
 
 #computeButton{
@@ -30,4 +35,16 @@
 
 #buttonAndInputArea{
     display: flex;
+}
+
+#resultDisplay{
+    background-color: rgba(99, 99, 99, 0.146);
+    width: 100%;
+    font-weight: 600;
+    color: rgb(79, 79, 79);
+}
+
+#graphs{
+    display: flex;
+    width: 100%;
 }

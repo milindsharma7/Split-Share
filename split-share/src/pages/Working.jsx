@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
-import Person from './Person';
+import Person from './Person.jsx';
+import Graph from "react-graph-vis";
 
 function Working() {
     const [persons,setPersons] = useState([]);
@@ -8,7 +9,25 @@ function Working() {
     const [amount,setAmount] = useState('');
     const [resultFinal,setResultFinal] = useState([]);
     const [display,setDisplay] = useState(false);
-
+    const [graph,setGraph] = useState({nodes:[],edges:[]});
+    const [graphAfter,setGraphAfter] = useState({nodes:[{}],edges:[{}]});
+    // const graph = {
+    //   nodes: [
+    //     { id: 1, label: "Node 1"},
+    //   ],
+    //   edges: [
+    //     { from: 1, to: 2,label: 5 },
+    //   ]
+    // };
+    const options = {
+      layout: {
+        // hierarchical: 
+      },
+      edges: {
+        color: "#000000"
+      },
+      height: "400px"
+    };
     const MaxFlow = (e) => {
         e.preventDefault();
         class Dinic_Max_Flow_Modified {
@@ -92,18 +111,22 @@ function Working() {
           function main() {
             const names = new Map();
             const reverseNames = new Map();
+            let temp1 = [],temp2 = [];
             let nodes = 1;let edges = persons.length;   
             for(let i=0;i<edges;i++){
                 if(names.has(persons[i].from) === false){
                     names.set(persons[i].from,nodes);
                     reverseNames.set(nodes,persons[i].from);
+                    temp1.push({id: nodes,label: persons[i].from});
                     nodes++;
                 }
                 if(names.has(persons[i].to) === false){
                     names.set(persons[i].to,nodes);
                     reverseNames.set(nodes,persons[i].to);
+                    temp1.push({id: nodes,label: persons[i].to});
                     nodes++;
                 }
+                temp2.push({from: names.get(persons[i].from),to: names.get(persons[i].to),label: persons[i].amount});
             }
             nodes--;
             const graph = Array.from({ length: nodes + 1 }, () =>
@@ -144,10 +167,8 @@ function Working() {
                   continue;
                 }
                 simplify();
-                // console.log(FinalCost);
                 const MF = new Dinic_Max_Flow_Modified(FinalGraph, FinalCost, nodes);
                 const result = MF.maxFlow(i, j);
-                // console.log(result);
                 if (result[0] > 0) {
                   FinalGraph[i][j] = 1;
                   FinalCost = result[1];
@@ -157,6 +178,7 @@ function Working() {
             }
             simplify();
             const results = [];
+            let temp = [];
             for (let i = 1; i <= nodes; i++) {
               for (let j = 1; j <= nodes; j++) {
                 if (FinalCost[i][j] > 0) {
@@ -164,13 +186,20 @@ function Working() {
                     //     "Person " + i + " gives Person " + j + " " + FinalCost[i][j]
                     //   );
                     results.push(`${reverseNames.get(i)} gives ${reverseNames.get(j)}: ${FinalCost[i][j]}`);
+                    temp.push({from: i,to: j,label: String(FinalCost[i][j])})
+                    console.log(temp)
                 }
               }
             }
             setResultFinal(results);
+            if(results.length === 0){
+              setResultFinal(['No one pays anything yay!']);
+            }
+            console.log(temp1,temp2);
+            setGraph({nodes: temp1,edges: temp2});
+            setGraphAfter({nodes: temp1,edges: temp});
           }
           main();
-          
           setDisplay(true);
     }
 
@@ -212,15 +241,28 @@ function Working() {
                 </div>
             })}
         </div>
+        <div id='resultDisplay'>
+        {display && 
+          <div>
+          Simplified:
+          </div>
+          }
         {display && Array.from(resultFinal)?.map((res)=>{
-            return <>
-            Simplified: 
-            <div>
-                {res}
+            return <div>
+              <div id='resultContent'>
+                  {res}
+              </div>
             </div>
-            </>
         })}
+        <div id='graphs'>
+            Before: 
+            <Graph graph = {graph} options = {options}/>
+            After:
+            <Graph graph = {graphAfter} options = {options}/>
+        </div>
+        </div>
     </div>
+   
   )
 }
 

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import './Home.css'
+import '../styles/Home.css'
 import Particle from './Particle'
 
 function Home() {
   return (
     <div id='mainDiv'>
-        <Particle/>
+        {/* <Particle/> */}
         <nav id='navBar'> 
             <div>SPLIT SHARE - Exploring the Algorithm Behind Debt Sharing</div>
             <div id='navLink'>

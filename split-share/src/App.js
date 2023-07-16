@@ -1,9 +1,9 @@
-import './App.css';
+import './styles/App.css';
 import { BrowserRouter, Route, Routes, } from 'react-router-dom'
-import Home from './Home';
-import Main from './Main';
-import Read from './Read';
-import Working from './Working';
+import Home from './pages/Home';
+import Main from './pages/Main';
+import Read from './pages/Read';
+import Working from './pages/Working';
 
 function App() {
   return (
