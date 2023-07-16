@@ -254,12 +254,12 @@ function Working() {
               </div>
             </div>
         })}
-        <div id='graphs'>
+        {display && <div id='graphs'>
             Before: 
             <Graph graph = {graph} options = {options}/>
             After:
             <Graph graph = {graphAfter} options = {options}/>
-        </div>
+        </div>}
         </div>
     </div>
    

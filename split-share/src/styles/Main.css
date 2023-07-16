@@ -10,6 +10,7 @@
     background-color: rgba(99, 99, 99, 0.146);
     padding: 20px;
     border-radius: 10px;
+    backdrop-filter: blur(3px);
 }
 
 #headings p{
