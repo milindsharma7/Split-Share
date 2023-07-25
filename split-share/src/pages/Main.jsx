@@ -32,7 +32,7 @@ function Main() {
                     refer <Link to='https://medium.com/@mithunmk93/algorithm-behind-splitwises-debt-simplification-feature-8ac485e97688' target='_blank'>THIS</Link> amazing blog.
                 </p>
                 <p>
-                    For more methods on Debt Simplification you can read <Link to={url} target='_blank'>THIS</Link> research paper.
+                    For more methods on Debt Simplification you can read <Link to={url} target='_blank'>THIS</Link> research paper and <Link to='https://terbium.io/2020/09/debt-simplification/'>THIS</Link> website.
                 </p>
                 <p>
                     The code behind the implementation can be found on my <Link to='https://github.com/milindsharma7/Split-Share/blob/master/Max_Flow_Modified.cpp' target='_blank'>GitHub</Link>.
